@@ -1,0 +1,8 @@
+What happens if size of packet changes?
+
+Answer: Better performance, it simply comes down to the packets becoming full less often. 
+
+This is explained by the fact that when a packet is full, this can cause threads to yield.
+Yielding is the process of fetching the cpu in order to put the current thread at the back
+of the queue. Yielding requires more time to execute, hence why using a bigger packet is
+better for performance.
